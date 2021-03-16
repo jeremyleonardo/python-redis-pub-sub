@@ -1,0 +1,25 @@
+# OSX Artifacts
+*.DS_Store
+
+# Python Binarys
+*.pyc
+*.pye
+**/__pycache__
+
+# Logs
+*.log
+
+# Env vars
+.env
+
+# Profiling
+*.prof
+
+# IDE
+.vscode
+.idea
+*.sw?
+
+# Linters etc
+.coverage
+.mypy_cache

@@ -1,0 +1,21 @@
+version: '3'
+services:
+  redis:
+    image: redis
+  subscriber:
+    build:
+      context: ./subscriber
+      dockerfile: ./Dockerfile
+    image: jeremyleo/subscriber
+    tty: true
+    depends_on:
+      - redis
+  publisher:
+    build:
+      context: ./publisher
+      dockerfile: ./Dockerfile
+    image: jeremyleo/publisher
+    ports:
+      - 5000:5000
+    depends_on:
+      - redis

@@ -1,0 +1,4 @@
+prettyconf==2.1.0
+redis==3.5.3
+flask==1.1.2
+ipython==7.19.0
