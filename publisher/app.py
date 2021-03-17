@@ -18,8 +18,16 @@ def publish(message):
 
 
 @app.get("/")
-async def root(
-    message: Optional[str]
-    ):
-    publish(message or "test message")
+async def root():
     return "OK"
+
+
+@app.post("/messaging/send")
+async def send_message(
+    message: Optional[str] = ''
+    ):
+    if message != '':
+        publish(message)
+    else:
+        publish("test message")
+    return {"status": "succes"}
