@@ -1,14 +1,11 @@
 FROM python:3.8
 
-WORKDIR /home/app
+RUN pip install 'poetry==1.1.5'
 
-COPY requirements.txt ./
+WORKDIR /application
+COPY poetry.lock pyproject.toml /application/
 
-RUN pip install -r requirements.txt
+RUN poetry config virtualenvs.create false \
+  && poetry install --no-interaction --no-ansi
 
-COPY . ./
-
-RUN groupadd -r flask && useradd --no-log-init -r -g flask flask
-USER flask
-
-CMD python app.py
+COPY app.py /application/app.py

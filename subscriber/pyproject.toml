@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "subscriber"
+version = "0.1.0"
+description = ""
+authors = ["Jeremy Leonardo <58095255+jeremy-leonardo@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+redis = "^3.5.3"
+prettyconf = "^2.2.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

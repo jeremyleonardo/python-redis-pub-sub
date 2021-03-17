@@ -6,8 +6,9 @@ services:
     build:
       context: ./subscriber
       dockerfile: ./Dockerfile
-    image: jeremyleo/subscriber
+    image: jeremyleo/python-redis-subscriber
     tty: true
+    entrypoint: python app.py
     depends_on:
       - redis
   publisher:
