@@ -1,21 +1,14 @@
+# Python Redis Pub/Sub
+
+This is a sample app for python Redis pub/sub with FastAPI as pub.
+
+Something to reconsider before using redis pub/sub with multiple sub workers : https://stackoverflow.com/questions/32037803/redis-pub-sub-ack-nack
 
 ## Run
 
 Build and start the services:
 
 ```bash
-# Build the input and output images
 docker-compose build
-
-# Start all services
 docker-compose up
 ```
-
-Now you can send a request to the input service by querying port 5000 on the
-host:
-
-```bash
-curl 'localhost:5000/?message=foobar'
-```
-
-You will see the message being printed in the Docker Compose logs.
