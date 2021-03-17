@@ -14,8 +14,9 @@ services:
     build:
       context: ./publisher
       dockerfile: ./Dockerfile
-    image: jeremyleo/publisher
+    image: jeremyleo/python-redis-publisher
     ports:
-      - 5000:5000
+      - 8080:8080
+    entrypoint: uvicorn app:app --host 0.0.0.0 --port 8080
     depends_on:
       - redis
