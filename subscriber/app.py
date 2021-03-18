@@ -15,7 +15,7 @@ def main():
     while True:
         message = p.get_message()
         if message:
-            print(message.get("data", ""))
+            print("Received Message : " + message.get("data", ""))
         time.sleep(0.001)
 
 
