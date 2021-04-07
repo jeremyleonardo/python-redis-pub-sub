@@ -12,11 +12,11 @@ REDIS_HOST = config("REDIS_HOST", default="redis")
 
 
 def publish(message):
-    while True:
+    while True:  # note: limit this to x attempts, not a good idea to try indefinitely
         global r
         try:
-            if(random.randint(0,9) < 3):
-                raise redis.ConnectionError("Test Connection Error")
+            # if(random.randint(0,9) < 3):
+            #     raise redis.ConnectionError("Test Connection Error")
             rcvd = r.publish(CHANNEL, message)
             if rcvd >0:
                 break
